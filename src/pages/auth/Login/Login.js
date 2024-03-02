@@ -35,7 +35,7 @@ const Login = ({navigation}) => {
         message: authErrorMessageParser(error.code),
         type: 'danger', // kırmızı renkli kayanbildirim
       })
-      setLoading(false)
+      setLoading(false);
     }
   }
 

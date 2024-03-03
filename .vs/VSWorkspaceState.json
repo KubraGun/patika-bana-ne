@@ -1,6 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src",
+    "\\src\\components",
+    "\\src\\components\\modal",
+    "\\src\\components\\modal\\contentInput"
   ],
+  "SelectedNode": "\\tsconfig.json",
   "PreviewInSolutionExplorer": false
 }

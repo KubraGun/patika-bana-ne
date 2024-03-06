@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Platform} from 'react-native';
 
 export default StyleSheet.create({
   container: {
@@ -11,6 +11,7 @@ export default StyleSheet.create({
 
   input: {
     flex:1, // kalan alanın tamamını kaplar
+    padding: Platform.OS == 'android' ? 0 : 5,
   },
-
+//Platform.OS -> 'android' ya da 'ios' olarak döner
 });

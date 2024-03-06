@@ -24,9 +24,19 @@ const Messages = () => {
     .on('value', snapshot => {
       const contentData = snapshot.val();
 
-      if(!contentData) return;
+      /**
+       * DB'den silindiği zaman değişiklikler takip edilemeyeceğinden
+       * yani DB'den silinir ancak kullanıcı uygulamada yine görür
+       if(!contentData) return;
+
+       * bunun yerine : parseContentData içerisine || {} ekleyerek boş bir
+       * obje göndermesini sağlayabiliriz
+       */
+
+
+      
       //console.log(contentData/*'User data: ', snapshot.val()*/);
-      const parsedData = parseContentData(contentData);
+      const parsedData = parseContentData(contentData || {}); //
       setContentList(parsedData);
     });
 
@@ -50,13 +60,17 @@ const Messages = () => {
       text: content,
       username: userMail.split('@')[0],
       date: (new Date()).toISOString(),
+      dislike: 0,
     };
 
     database().ref('messages/').push(contentObject);
   }
 
-  const renderItem = ({item}) => <MessageCard message={item}/>
+  const renderItem = ({item}) => <MessageCard message={item} onPress={() => handleBanane(item)}/>
 
+  function handleBanane(item){
+    database().ref('messages/${item.id}/').update({dislike: dislike + 1,})
+  }
 
   return (
     <SafeAreaView style={styles.container}>

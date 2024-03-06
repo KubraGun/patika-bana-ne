@@ -30,6 +30,7 @@ export default () => {
   React.useEffect(() => {
     auth()
     .onAuthStateChanged((user) => {
+      
       setUserSession(!!user); // !!: if object is null, return false
     });
   }, []);

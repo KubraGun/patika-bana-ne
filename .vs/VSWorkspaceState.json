@@ -3,9 +3,14 @@
     "",
     "\\src",
     "\\src\\components",
+    "\\src\\components\\card",
+    "\\src\\components\\card\\MessageCard",
     "\\src\\components\\modal",
-    "\\src\\components\\modal\\contentInput"
+    "\\src\\components\\modal\\contentInput",
+    "\\src\\pages",
+    "\\src\\pages\\Messages",
+    "\\src\\utils"
   ],
-  "SelectedNode": "\\tsconfig.json",
+  "SelectedNode": "\\src\\utils",
   "PreviewInSolutionExplorer": false
 }
